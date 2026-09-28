@@ -37,6 +37,29 @@ const server=http.createServer((req,res)=>{
     await select(page,'chips');await generate(page);assert.match(await page.locator('.recommendation-hero h2').innerText(),/Metallized/);assert.equal(await page.locator('.map-card').count(),0);await overflow(page,width+' chips results');
     await page.screenshot({path:path.join(root,'test-output',width+'-chips.png'),fullPage:true});
     await page.getByText('How was this recommendation generated?',{exact:true}).click();assert.ok(await page.locator('.transparency table').isVisible());await overflow(page,width+' expanded comparison');
+    // Custom mode is tested at every viewport, in addition to all existing flows.
+    await page.getByRole('button',{name:'Start New Recommendation'}).click();
+    await page.locator('label[for="commodity-custom"]').click();
+    assert.equal(await page.locator('#moisture').inputValue(),'');
+    await page.getByRole('button',{name:'Continue to Storage'}).click();assert.ok(await page.locator('#product-step').isVisible());
+    await page.locator('#custom-name').fill('Roasted Peanuts');await page.locator('#custom-type').selectOption('processed');
+    await page.locator('#moisture').fill('3');await page.locator('#fat').fill('49');
+    assert.equal(await page.locator('#respiration').inputValue(),'0');assert.ok(await page.locator('#respiration').isDisabled());
+    await overflow(page,width+' custom product');
+    await page.getByRole('button',{name:'Continue to Storage'}).click();
+    await page.locator('#days').fill('180');await page.locator('#storage').selectOption('ambient');await page.locator('#temp').fill('25');await page.locator('#humidity').fill('60');await page.locator('#transport').selectOption('long');
+    await generate(page);assert.match(await page.locator('#result-title').innerText(),/Roasted Peanuts/);assert.match(await page.locator('.recommendation-hero h2').innerText(),/Foil|Metallized/);assert.equal(await page.locator('.map-card').count(),0);
+    await overflow(page,width+' custom processed results');
+    await page.getByRole('button',{name:'Adjust inputs'}).click();await page.getByRole('button',{name:'Product details'}).click();assert.equal(await page.locator('#custom-name').inputValue(),'Roasted Peanuts');assert.equal(await page.locator('#fat').inputValue(),'49');
+    await page.locator('#custom-name').fill('Fresh Guava');await page.locator('#custom-type').selectOption('fresh');
+    await page.locator('#moisture').fill('81');await page.locator('#fat').fill('1');await page.locator('#ph-na').uncheck();await page.locator('#ph').fill('4.2');
+    await page.getByRole('button',{name:'Continue to Storage'}).click();assert.ok(await page.locator('#product-step').isVisible());
+    await page.locator('#respiration').selectOption('2');await page.getByRole('button',{name:'Continue to Storage'}).click();
+    await page.locator('#days').fill('10');await page.locator('#storage').selectOption('chilled');await page.locator('#temp').fill('8');await page.locator('#humidity').fill('90');await page.locator('#transport').selectOption('medium');
+    await generate(page);assert.match(await page.locator('#result-title').innerText(),/Fresh Guava/);assert.match(await page.locator('.recommendation-hero h2').innerText(),/Breathable|Micro-perforated/);
+    const customMap=await page.locator('.map-card').innerText();assert.match(customMap,/Requires product-specific validation/);assert.ok(!/\d.*%/.test(customMap));assert.ok(!/Red Delicious|mature-green tomatoes/.test(customMap));
+    await overflow(page,width+' custom fresh results');await page.screenshot({path:path.join(root,'test-output',width+'-custom-guava.png'),fullPage:true});
+    checks.push(width+' custom processed/fresh, required values, back preservation and no numeric MAP');
     if(width===1440){
       for(const id of ['apple','potato','biscuits','rice','milk','oil']){await select(page,id);await generate(page);assert.ok((await page.locator('.recommendation-hero h2').innerText()).length>3);checks.push(id+' full browser flow');}
       await page.getByRole('button',{name:'Adjust inputs'}).click();await page.getByRole('button',{name:'Product details'}).click();

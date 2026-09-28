@@ -29,3 +29,7 @@ Future edits should preserve this working implementation and rerun the existing 
 - Working source is already committed; **do not rebuild or replace it on resume**.
 
 Public deployment is complete and verified. README, test report and demo guide are ready.
+
+## Custom Food enhancement — implementation checkpoint
+
+Custom Food added without changing the eight preset outputs, material profiles, ranking formula or storage inputs. Manual name/type/composition; fresh respiration required; processed respiration N/A. Custom fresh MAP uses validation-only guidance with no numeric gas targets. Regression fixture captures all prior preset outputs. New engine and desktop/mobile browser cases cover Roasted Peanuts and Fresh Guava. Deployment verification pending for this update.

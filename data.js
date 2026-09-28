@@ -24,7 +24,9 @@
     {id:'mono',name:'Recyclable Mono-material PE',short:'PE-based moisture barrier structure',water:4,oxygen:2,gas:1,strength:4,light:2,grease:4,seal:5,cold:true,eco:5,complexity:1,thickness:[70,120]},
     {id:'vent',name:'Ventilated Opaque HDPE Bag',short:'Light screening with open ventilation',water:1,oxygen:1,gas:5,strength:4,light:4,grease:2,seal:4,cold:false,eco:4,complexity:1,thickness:[60,100],fresh:true}
   ];
-  const data = {commodities, materials};
+  // Custom mode has no assumed food composition; storage remains editable in step 2.
+  const customProfile = {name:'Custom Food', symbol:'+', color:'rice', fresh:false, customName:'', productType:'', moisture:null, fat:null, ph:null, respiration:0, days:30, temp:25, humidity:60, storage:'ambient', transport:'local', note:'Enter the properties of your food. Recommendations use generic property-driven rules, not a validated commodity profile.'};
+  const data = {commodities, materials, customProfile};
   root.PackWiseData = data;
   if (typeof module !== 'undefined') module.exports = data;
 })(typeof window !== 'undefined' ? window : globalThis);

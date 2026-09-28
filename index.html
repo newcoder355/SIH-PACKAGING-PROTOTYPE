@@ -20,7 +20,7 @@
     <h1 id="home-title" tabindex="-1">The right protection.<br><em>For every product.</em></h1>
     <p class="hero-description">Find the right packaging for your food product using intelligent analysis of food properties, storage conditions and shelf-life requirements.</p>
     <button class="button primary" id="start">Get Packaging Recommendation <span aria-hidden="true">↗</span></button>
-    <p class="hero-caption">8 commodities · 11 material structures · Clear reasoning</p>
+    <p class="hero-caption">8 demo foods + Custom Food · 11 material structures · Clear reasoning</p>
     <div class="benefits"><div><span aria-hidden="true">↘</span><strong>Reduce food<br>wastage</strong></div><div><span aria-hidden="true">◷</span><strong>Improve<br>shelf life</strong></div><div><span aria-hidden="true">♧</span><strong>Choose sustainable<br>packaging</strong></div></div>
   </div>
   <div class="hero-panel" aria-label="Illustrative packaging decision preview">
@@ -38,12 +38,16 @@
     <div class="section-heading"><span class="eyebrow">01 / KNOW YOUR PRODUCT</span><h1 id="product-title" tabindex="-1">What are you packaging?</h1><p>Choose a product. Start with a demo profile, then fine-tune its properties.</p></div>
     <form id="product-form" novalidate>
       <fieldset class="commodity-fieldset"><legend class="label">Select commodity</legend><div id="commodity-grid" class="commodity-grid"></div></fieldset>
-      <div class="form-layout"><div class="card properties-card"><div class="card-heading"><h2>Food properties</h2><span class="muted-badge">Editable demo values</span></div>
+      <div class="form-layout"><div class="card properties-card"><div class="card-heading"><h2>Food properties</h2><span class="muted-badge" id="profile-badge">Editable demo values</span></div>
+        <fieldset id="custom-fields" class="custom-fields" hidden disabled><legend>Your custom food</legend><div class="input-grid">
+          <label>Food / product name<input type="text" id="custom-name" maxlength="60" required placeholder="e.g. Roasted Peanuts" autocomplete="off"></label>
+          <label>Product type<select id="custom-type" required><option value="">Choose a product type</option><option value="fresh">Fresh fruit / vegetable</option><option value="processed">Processed / packaged food</option></select></label>
+        </div><p>Enter the food properties below, then review storage and distribution in the next step.</p></fieldset>
         <div class="input-grid">
           <label>Moisture content <span class="unit-label">% by mass</span><input type="number" name="moisture" id="moisture" min="0" max="100" step="0.1" required><small>Water present in the product, not water activity.</small></label>
           <label>Oil / fat content <span class="unit-label">% by mass</span><input type="number" name="fat" id="fat" min="0" max="100" step="0.1" required><small>Higher fat can increase oxidation sensitivity.</small></label>
           <div><label for="ph">pH <span class="unit-label">0–14</span></label><input type="number" name="ph" id="ph" min="0" max="14" step="0.1"><label class="check-label"><input type="checkbox" id="ph-na"> Not applicable / not measured</label></div>
-          <label>Respiration level<select id="respiration" name="respiration"><option value="0">Not applicable</option><option value="1">Low</option><option value="2">Medium</option><option value="3">High</option></select><small id="respiration-hint">Relative demo category, not a measured rate.</small></label>
+          <label>Respiration level<select id="respiration" name="respiration" required><option value="">Choose a level</option><option value="0">Not applicable</option><option value="1">Low</option><option value="2">Medium</option><option value="3">High</option></select><small id="respiration-hint">Relative demo category, not a measured rate.</small></label>
         </div>
       </div><aside class="context-card"><span class="eyebrow">PRODUCT INSIGHT</span><h3 id="product-insight-title"></h3><p id="product-insight"></p><div class="aside-divider"></div><p>Defaults are illustrative starting points. Actual composition varies by variety, processing and formulation.</p></aside></div>
       <p id="product-error" class="error" role="alert" hidden></p>

@@ -17,7 +17,7 @@ PackWise AI demonstrates the workflow from commodity selection to an explained m
 ### Features
 
 - Home → product properties → storage/distribution → short analysis → results wizard.
-- Eight editable commodity profiles; applicable pH and fresh-produce respiration controls.
+- Eight editable commodity profiles plus Custom Food mode; applicable pH and fresh-produce respiration controls.
 - Eleven packaging structures with ordinal material characteristics.
 - Ranked primary and second-best materials with dynamic explanations.
 - Target OTR/WVTR requirements, demo thickness bands, sealing, gas exchange, mechanical strength and MAP suitability.
@@ -39,6 +39,14 @@ PackWise AI demonstrates the workflow from commodity selection to an explained m
 | Cooking Oil | Refined oil in a flexible retail pack | Oxidation, light and grease resistance |
 
 Changing the commodity resets its profile and storage defaults. Oil pH is not applicable. Dry-food pH defaults to not measured except milk powder, where the value refers to reconstituted product. Respiration is qualitative, not a measured rate.
+
+## Custom Food mode
+
+The prototype supports **8 predefined demonstration commodities and 1 Custom Food mode**. Select Custom Food in the Product step to enter a name, product type (fresh fruit/vegetable or processed/packaged food), moisture, fat and pH or N/A. Composition fields start empty. Respiration is required for fresh produce; processed foods automatically use N/A. The existing Storage step remains unchanged and editable.
+
+Custom foods use the same material database, scoring weights, ranking formula, sustainability candidates and result layout. Requirements come from entered properties. Low-moisture custom processed foods (≤10%) receive a higher moisture-barrier requirement to protect against moisture pickup; high moisture and fat, shelf-life target, humidity, temperature and handling feed the existing requirement rules. Names are display labels and never select a preset automatically.
+
+Custom fresh food MAP shows **Requires product-specific validation**, suggests breathable or micro-perforated film, and explains the need for respiration/package trials. It does not show numerical O₂/CO₂ targets or borrow Tomato/Apple values. These are property-driven heuristic recommendations, not validated product-specific packaging specifications or a shelf-life prediction.
 
 ## How the current engine works
 

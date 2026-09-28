@@ -51,3 +51,32 @@ test('acidity, tomato chilling and ambitious shelf life surface review notes',()
 test('invalid composition, nonfinite values and incompatible temperatures rejected',()=>{
   for(const change of [{fat:90,moisture:90},{days:0},{temp:NaN},{humidity:101},{storage:'frozen',temp:20},{ph:15},{respiration:0}]) assert.throws(()=>run('tomato',change));
 });
+
+test('all preset rankings, scores, explanations and MAP references remain unchanged',()=>{
+  const baseline=require('./preset-baseline.json');
+  for(const [id,expected] of Object.entries(baseline)){
+    const r=run(id);
+    assert.deepEqual({ranked:r.ranked,targets:r.targets,reasons:r.reasons,notes:r.notes,map:r.map,thickness:r.thickness},expected,id);
+  }
+});
+const peanuts={...E.defaults('custom'),customName:'Roasted Peanuts',productType:'processed',moisture:3,fat:49,ph:null,respiration:0,days:180,storage:'ambient',temp:25,humidity:60,transport:'long'};
+const guava={...peanuts,customName:'Fresh Guava',productType:'fresh',moisture:81,fat:1,ph:4.2,respiration:2,days:10,storage:'chilled',temp:8,humidity:90,transport:'medium'};
+test('custom peanuts use existing oxygen and grease barrier ranking without fresh MAP',()=>{
+  const r=E.recommend(peanuts);assert.ok(['foil','met'].includes(r.best.id));
+  assert.equal(r.targets.oxygen,5);assert.equal(r.targets.grease,5);assert.equal(r.map,null);
+  assert.equal(r.commodity.name,'Roasted Peanuts');assert.match(r.reasons.join(' '),/Roasted Peanuts.*49% fat/);
+});
+test('custom guava breathes but does not inherit a known commodity atmosphere',()=>{
+  const r=E.recommend(guava);assert.ok(['micro','breath'].includes(r.best.id));assert.equal(r.fresh,true);
+  assert.equal(r.map.suitability,'Requires product-specific validation');assert.equal(r.map.o2,undefined);assert.equal(r.map.co2,undefined);
+  assert.match(r.map.note,/determined experimentally/);assert.match(r.reasons.join(' '),/Fresh Guava/);
+});
+test('custom validation rejects missing or invalid properties',()=>{
+  for(const change of [{customName:' '},{customName:'a'.repeat(61)},{productType:''},{moisture:null},{moisture:101},{fat:-1},{moisture:52,fat:49},{ph:15},{ph:NaN},{respiration:1}]) assert.throws(()=>E.recommend({...peanuts,...change}));
+  assert.throws(()=>E.recommend({...guava,respiration:0}));
+});
+test('custom properties affect requirements; frozen fresh custom keeps existing frozen behavior',()=>{
+  const low=E.recommend({...peanuts,fat:1,days:10,humidity:40,transport:'local'}),high=E.recommend(peanuts);
+  assert.ok(high.targets.oxygen>low.targets.oxygen);assert.notEqual(high.best.id,low.best.id);
+  const frozen=E.recommend({...guava,storage:'frozen',temp:-18});assert.equal(frozen.map,null);assert.ok(frozen.best.cold);
+});

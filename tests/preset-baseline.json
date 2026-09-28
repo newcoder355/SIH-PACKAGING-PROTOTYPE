@@ -1,0 +1,1173 @@
+{
+  "tomato": {
+    "ranked": [
+      {
+        "id": "micro",
+        "name": "Micro-perforated LDPE Film",
+        "short": "Controlled ventilation with moisture retention",
+        "water": 2,
+        "oxygen": 1,
+        "gas": 4,
+        "strength": 3,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": false,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          30,
+          60
+        ],
+        "fresh": true,
+        "score": 98
+      },
+      {
+        "id": "breath",
+        "name": "Breathable Produce Film",
+        "short": "Selective exchange for living produce",
+        "water": 2,
+        "oxygen": 1,
+        "gas": 3,
+        "strength": 2,
+        "light": 1,
+        "grease": 1,
+        "seal": 4,
+        "cold": false,
+        "eco": 2,
+        "complexity": 2,
+        "thickness": [
+          25,
+          45
+        ],
+        "fresh": true,
+        "score": 83
+      },
+      {
+        "id": "vent",
+        "name": "Ventilated Opaque HDPE Bag",
+        "short": "Light screening with open ventilation",
+        "water": 1,
+        "oxygen": 1,
+        "gas": 5,
+        "strength": 4,
+        "light": 4,
+        "grease": 2,
+        "seal": 4,
+        "cold": false,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          100
+        ],
+        "fresh": true,
+        "score": 81
+      },
+      {
+        "id": "bio",
+        "name": "Compostable Breathable Film",
+        "short": "Certified compostable-grade concept",
+        "water": 1,
+        "oxygen": 1,
+        "gas": 3,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 3,
+        "cold": false,
+        "eco": 3,
+        "complexity": 2,
+        "thickness": [
+          30,
+          60
+        ],
+        "fresh": true,
+        "score": 78
+      }
+    ],
+    "targets": {
+      "water": 2,
+      "oxygen": 1,
+      "gas": 4,
+      "strength": 2,
+      "light": 1,
+      "grease": 1,
+      "seal": 4
+    },
+    "reasons": [
+      "Tomato continues to respire after harvest. Medium respiration at 13°C calls for increased ventilation, rather than a gas-tight barrier.",
+      "At 94% product moisture and 92% surrounding humidity, balance moisture retention with ventilation to manage condensation.",
+      "Controlled chilled storage at 13°C supports slower respiration; maintain the cold chain and use a protective produce tray."
+    ],
+    "notes": [
+      "At pH 4.3, specify a validated food-contact polymer layer; exposed aluminium must not contact acidic food. Migration and compatibility testing remain necessary."
+    ],
+    "map": {
+      "suitability": "Candidate for validated trials",
+      "o2": "3–5%",
+      "co2": "0–3%",
+      "note": "Illustrative controlled-atmosphere references for mature-green tomatoes. Passive MAP must be engineered for pack size, maturity, temperature and respiration."
+    },
+    "thickness": [
+      30,
+      60
+    ]
+  },
+  "apple": {
+    "ranked": [
+      {
+        "id": "breath",
+        "name": "Breathable Produce Film",
+        "short": "Selective exchange for living produce",
+        "water": 2,
+        "oxygen": 1,
+        "gas": 3,
+        "strength": 2,
+        "light": 1,
+        "grease": 1,
+        "seal": 4,
+        "cold": false,
+        "eco": 2,
+        "complexity": 2,
+        "thickness": [
+          25,
+          45
+        ],
+        "fresh": true,
+        "score": 91
+      },
+      {
+        "id": "bio",
+        "name": "Compostable Breathable Film",
+        "short": "Certified compostable-grade concept",
+        "water": 1,
+        "oxygen": 1,
+        "gas": 3,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 3,
+        "cold": false,
+        "eco": 3,
+        "complexity": 2,
+        "thickness": [
+          30,
+          60
+        ],
+        "fresh": true,
+        "score": 86
+      },
+      {
+        "id": "micro",
+        "name": "Micro-perforated LDPE Film",
+        "short": "Controlled ventilation with moisture retention",
+        "water": 2,
+        "oxygen": 1,
+        "gas": 4,
+        "strength": 3,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": false,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          30,
+          60
+        ],
+        "fresh": true,
+        "score": 84
+      },
+      {
+        "id": "vent",
+        "name": "Ventilated Opaque HDPE Bag",
+        "short": "Light screening with open ventilation",
+        "water": 1,
+        "oxygen": 1,
+        "gas": 5,
+        "strength": 4,
+        "light": 4,
+        "grease": 2,
+        "seal": 4,
+        "cold": false,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          100
+        ],
+        "fresh": true,
+        "score": 67
+      }
+    ],
+    "targets": {
+      "water": 2,
+      "oxygen": 1,
+      "gas": 3,
+      "strength": 3,
+      "light": 1,
+      "grease": 1,
+      "seal": 4
+    },
+    "reasons": [
+      "Apple continues to respire after harvest. Low respiration at 2°C calls for controlled gas exchange, rather than a gas-tight barrier.",
+      "At 85% product moisture and 92% surrounding humidity, balance moisture retention with ventilation to manage condensation.",
+      "Controlled chilled storage at 2°C supports slower respiration; maintain the cold chain and use a protective produce tray."
+    ],
+    "notes": [
+      "At pH 3.8, specify a validated food-contact polymer layer; exposed aluminium must not contact acidic food. Migration and compatibility testing remain necessary.",
+      "Additional protection is needed for: mechanical strength. Check the supplier grade and secondary packaging."
+    ],
+    "map": {
+      "suitability": "Cultivar-specific trials",
+      "o2": "1–2%",
+      "co2": "2–4%",
+      "note": "Red Delicious controlled-atmosphere references only; do not generalize to other apple cultivars or directly use as a gas-flush recipe."
+    },
+    "thickness": [
+      25,
+      45
+    ]
+  },
+  "potato": {
+    "ranked": [
+      {
+        "id": "vent",
+        "name": "Ventilated Opaque HDPE Bag",
+        "short": "Light screening with open ventilation",
+        "water": 1,
+        "oxygen": 1,
+        "gas": 5,
+        "strength": 4,
+        "light": 4,
+        "grease": 2,
+        "seal": 4,
+        "cold": false,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          100
+        ],
+        "fresh": true,
+        "score": 96
+      },
+      {
+        "id": "micro",
+        "name": "Micro-perforated LDPE Film",
+        "short": "Controlled ventilation with moisture retention",
+        "water": 2,
+        "oxygen": 1,
+        "gas": 4,
+        "strength": 3,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": false,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          30,
+          60
+        ],
+        "fresh": true,
+        "score": 65
+      },
+      {
+        "id": "breath",
+        "name": "Breathable Produce Film",
+        "short": "Selective exchange for living produce",
+        "water": 2,
+        "oxygen": 1,
+        "gas": 3,
+        "strength": 2,
+        "light": 1,
+        "grease": 1,
+        "seal": 4,
+        "cold": false,
+        "eco": 2,
+        "complexity": 2,
+        "thickness": [
+          25,
+          45
+        ],
+        "fresh": true,
+        "score": 51
+      },
+      {
+        "id": "bio",
+        "name": "Compostable Breathable Film",
+        "short": "Certified compostable-grade concept",
+        "water": 1,
+        "oxygen": 1,
+        "gas": 3,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 3,
+        "cold": false,
+        "eco": 3,
+        "complexity": 2,
+        "thickness": [
+          30,
+          60
+        ],
+        "fresh": true,
+        "score": 47
+      }
+    ],
+    "targets": {
+      "water": 2,
+      "oxygen": 1,
+      "gas": 5,
+      "strength": 3,
+      "light": 4,
+      "grease": 1,
+      "seal": 4
+    },
+    "reasons": [
+      "Potato continues to respire after harvest. Low respiration at 12°C calls for increased ventilation, rather than a gas-tight barrier.",
+      "Potatoes need darkness and airflow. An opaque ventilated pack is preferred; reduced-oxygen MAP is not a priority.",
+      "Controlled chilled storage at 12°C supports slower respiration; maintain the cold chain and use a protective produce tray."
+    ],
+    "notes": [
+      "Additional protection is needed for: moisture barrier. Check the supplier grade and secondary packaging."
+    ],
+    "map": {
+      "suitability": "Not a primary requirement",
+      "o2": "Ambient air (~21%)",
+      "co2": "Ambient air (~0.04%)",
+      "note": "Prefer ventilation and darkness. These are ambient-air references, not a low-oxygen MAP recipe."
+    },
+    "thickness": [
+      60,
+      100
+    ]
+  },
+  "chips": {
+    "ranked": [
+      {
+        "id": "met",
+        "name": "PET / Metallized PET / PE Laminate",
+        "short": "Moisture, oxygen and light barrier",
+        "water": 5,
+        "oxygen": 4,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 3,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 93
+      },
+      {
+        "id": "foil",
+        "name": "PET / Aluminium Foil / PE Laminate",
+        "short": "Very high barrier for sensitive products",
+        "water": 5,
+        "oxygen": 5,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 4,
+        "thickness": [
+          90,
+          140
+        ],
+        "score": 90
+      },
+      {
+        "id": "mono",
+        "name": "Recyclable Mono-material PE",
+        "short": "PE-based moisture barrier structure",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 5,
+        "complexity": 1,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 78
+      },
+      {
+        "id": "hdpe",
+        "name": "HDPE Film",
+        "short": "Tough grain and dry-food pack",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 3,
+        "seal": 4,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          120
+        ],
+        "score": 75
+      },
+      {
+        "id": "bopp",
+        "name": "Heat-sealable BOPP Film",
+        "short": "Crispness-focused snack wrap",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 3,
+        "light": 1,
+        "grease": 4,
+        "seal": 4,
+        "cold": false,
+        "eco": 3,
+        "complexity": 1,
+        "thickness": [
+          30,
+          50
+        ],
+        "score": 72
+      },
+      {
+        "id": "pet",
+        "name": "PET / PE Laminate",
+        "short": "Strong outer layer, sealable inner layer",
+        "water": 3,
+        "oxygen": 3,
+        "gas": 1,
+        "strength": 4,
+        "light": 1,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 2,
+        "thickness": [
+          60,
+          110
+        ],
+        "score": 71
+      },
+      {
+        "id": "ldpe",
+        "name": "LDPE Film",
+        "short": "Flexible moisture protection",
+        "water": 3,
+        "oxygen": 1,
+        "gas": 2,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          50,
+          100
+        ],
+        "score": 50
+      }
+    ],
+    "targets": {
+      "water": 4,
+      "oxygen": 4,
+      "gas": 0,
+      "strength": 4,
+      "light": 4,
+      "grease": 5,
+      "seal": 4
+    },
+    "reasons": [
+      "Potato Chips at 2% moisture needs a strong moisture barrier and reliable seals to protect crispness.",
+      "The 90-day shelf-life target at 25°C and 65% RH sets a very high moisture and very high oxygen barrier requirement. This is a design target, not a shelf-life prediction.",
+      "32% fat increases the need for oxidation and grease protection, including light shielding.",
+      "Long-distance transport increases the need for puncture resistance, robust seals and a protective outer carton."
+    ],
+    "notes": [],
+    "map": null,
+    "thickness": [
+      90,
+      140
+    ]
+  },
+  "biscuits": {
+    "ranked": [
+      {
+        "id": "hdpe",
+        "name": "HDPE Film",
+        "short": "Tough grain and dry-food pack",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 3,
+        "seal": 4,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          120
+        ],
+        "score": 92
+      },
+      {
+        "id": "bopp",
+        "name": "Heat-sealable BOPP Film",
+        "short": "Crispness-focused snack wrap",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 3,
+        "light": 1,
+        "grease": 4,
+        "seal": 4,
+        "cold": false,
+        "eco": 3,
+        "complexity": 1,
+        "thickness": [
+          30,
+          50
+        ],
+        "score": 92
+      },
+      {
+        "id": "mono",
+        "name": "Recyclable Mono-material PE",
+        "short": "PE-based moisture barrier structure",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 5,
+        "complexity": 1,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 91
+      },
+      {
+        "id": "met",
+        "name": "PET / Metallized PET / PE Laminate",
+        "short": "Moisture, oxygen and light barrier",
+        "water": 5,
+        "oxygen": 4,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 3,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 91
+      },
+      {
+        "id": "foil",
+        "name": "PET / Aluminium Foil / PE Laminate",
+        "short": "Very high barrier for sensitive products",
+        "water": 5,
+        "oxygen": 5,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 4,
+        "thickness": [
+          90,
+          140
+        ],
+        "score": 88
+      },
+      {
+        "id": "pet",
+        "name": "PET / PE Laminate",
+        "short": "Strong outer layer, sealable inner layer",
+        "water": 3,
+        "oxygen": 3,
+        "gas": 1,
+        "strength": 4,
+        "light": 1,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 2,
+        "thickness": [
+          60,
+          110
+        ],
+        "score": 87
+      },
+      {
+        "id": "ldpe",
+        "name": "LDPE Film",
+        "short": "Flexible moisture protection",
+        "water": 3,
+        "oxygen": 1,
+        "gas": 2,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          50,
+          100
+        ],
+        "score": 71
+      }
+    ],
+    "targets": {
+      "water": 4,
+      "oxygen": 3,
+      "gas": 0,
+      "strength": 3,
+      "light": 1,
+      "grease": 3,
+      "seal": 4
+    },
+    "reasons": [
+      "Biscuits at 4% moisture needs a strong moisture barrier and reliable seals to protect crispness.",
+      "The 60-day shelf-life target at 25°C and 60% RH sets a very high moisture and high oxygen barrier requirement. This is a design target, not a shelf-life prediction.",
+      "15% fat increases the need for oxidation and grease protection.",
+      "A well-formed seal and a suitable outer pack help protect the product during distribution."
+    ],
+    "notes": [
+      "Additional protection is needed for: oxygen barrier. Check the supplier grade and secondary packaging."
+    ],
+    "map": null,
+    "thickness": [
+      60,
+      120
+    ]
+  },
+  "rice": {
+    "ranked": [
+      {
+        "id": "hdpe",
+        "name": "HDPE Film",
+        "short": "Tough grain and dry-food pack",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 3,
+        "seal": 4,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          120
+        ],
+        "score": 94
+      },
+      {
+        "id": "bopp",
+        "name": "Heat-sealable BOPP Film",
+        "short": "Crispness-focused snack wrap",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 3,
+        "light": 1,
+        "grease": 4,
+        "seal": 4,
+        "cold": false,
+        "eco": 3,
+        "complexity": 1,
+        "thickness": [
+          30,
+          50
+        ],
+        "score": 94
+      },
+      {
+        "id": "ldpe",
+        "name": "LDPE Film",
+        "short": "Flexible moisture protection",
+        "water": 3,
+        "oxygen": 1,
+        "gas": 2,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          50,
+          100
+        ],
+        "score": 93
+      },
+      {
+        "id": "mono",
+        "name": "Recyclable Mono-material PE",
+        "short": "PE-based moisture barrier structure",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 5,
+        "complexity": 1,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 93
+      },
+      {
+        "id": "pet",
+        "name": "PET / PE Laminate",
+        "short": "Strong outer layer, sealable inner layer",
+        "water": 3,
+        "oxygen": 3,
+        "gas": 1,
+        "strength": 4,
+        "light": 1,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 2,
+        "thickness": [
+          60,
+          110
+        ],
+        "score": 92
+      },
+      {
+        "id": "met",
+        "name": "PET / Metallized PET / PE Laminate",
+        "short": "Moisture, oxygen and light barrier",
+        "water": 5,
+        "oxygen": 4,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 3,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 86
+      },
+      {
+        "id": "foil",
+        "name": "PET / Aluminium Foil / PE Laminate",
+        "short": "Very high barrier for sensitive products",
+        "water": 5,
+        "oxygen": 5,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 4,
+        "thickness": [
+          90,
+          140
+        ],
+        "score": 84
+      }
+    ],
+    "targets": {
+      "water": 3,
+      "oxygen": 1,
+      "gas": 0,
+      "strength": 3,
+      "light": 1,
+      "grease": 1,
+      "seal": 4
+    },
+    "reasons": [
+      "Dried rice needs protection from humid air and package damage. At 1% fat, oxygen protection has lower priority.",
+      "The 90-day shelf-life target at 25°C and 60% RH sets a high moisture and low oxygen barrier requirement. This is a design target, not a shelf-life prediction.",
+      "A well-formed seal and a suitable outer pack help protect the product during distribution."
+    ],
+    "notes": [],
+    "map": null,
+    "thickness": [
+      60,
+      120
+    ]
+  },
+  "milk": {
+    "ranked": [
+      {
+        "id": "foil",
+        "name": "PET / Aluminium Foil / PE Laminate",
+        "short": "Very high barrier for sensitive products",
+        "water": 5,
+        "oxygen": 5,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 4,
+        "thickness": [
+          90,
+          140
+        ],
+        "score": 93
+      },
+      {
+        "id": "met",
+        "name": "PET / Metallized PET / PE Laminate",
+        "short": "Moisture, oxygen and light barrier",
+        "water": 5,
+        "oxygen": 4,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 3,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 89
+      },
+      {
+        "id": "mono",
+        "name": "Recyclable Mono-material PE",
+        "short": "PE-based moisture barrier structure",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 5,
+        "complexity": 1,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 66
+      },
+      {
+        "id": "hdpe",
+        "name": "HDPE Film",
+        "short": "Tough grain and dry-food pack",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 3,
+        "seal": 4,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          120
+        ],
+        "score": 64
+      },
+      {
+        "id": "bopp",
+        "name": "Heat-sealable BOPP Film",
+        "short": "Crispness-focused snack wrap",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 3,
+        "light": 1,
+        "grease": 4,
+        "seal": 4,
+        "cold": false,
+        "eco": 3,
+        "complexity": 1,
+        "thickness": [
+          30,
+          50
+        ],
+        "score": 60
+      },
+      {
+        "id": "pet",
+        "name": "PET / PE Laminate",
+        "short": "Strong outer layer, sealable inner layer",
+        "water": 3,
+        "oxygen": 3,
+        "gas": 1,
+        "strength": 4,
+        "light": 1,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 2,
+        "thickness": [
+          60,
+          110
+        ],
+        "score": 60
+      },
+      {
+        "id": "ldpe",
+        "name": "LDPE Film",
+        "short": "Flexible moisture protection",
+        "water": 3,
+        "oxygen": 1,
+        "gas": 2,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          50,
+          100
+        ],
+        "score": 38
+      }
+    ],
+    "targets": {
+      "water": 5,
+      "oxygen": 5,
+      "gas": 0,
+      "strength": 4,
+      "light": 4,
+      "grease": 5,
+      "seal": 4
+    },
+    "reasons": [
+      "Milk powder is moisture-sensitive. A very high moisture barrier helps limit moisture pickup and clumping.",
+      "The 180-day shelf-life target at 25°C and 60% RH sets a very high moisture and very high oxygen barrier requirement. This is a design target, not a shelf-life prediction.",
+      "26% fat increases the need for oxidation and grease protection, including light shielding.",
+      "Long-distance transport increases the need for puncture resistance, robust seals and a protective outer carton."
+    ],
+    "notes": [],
+    "map": null,
+    "thickness": [
+      110,
+      160
+    ]
+  },
+  "oil": {
+    "ranked": [
+      {
+        "id": "foil",
+        "name": "PET / Aluminium Foil / PE Laminate",
+        "short": "Very high barrier for sensitive products",
+        "water": 5,
+        "oxygen": 5,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 4,
+        "thickness": [
+          90,
+          140
+        ],
+        "score": 91
+      },
+      {
+        "id": "met",
+        "name": "PET / Metallized PET / PE Laminate",
+        "short": "Moisture, oxygen and light barrier",
+        "water": 5,
+        "oxygen": 4,
+        "gas": 0,
+        "strength": 4,
+        "light": 5,
+        "grease": 5,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 3,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 88
+      },
+      {
+        "id": "mono",
+        "name": "Recyclable Mono-material PE",
+        "short": "PE-based moisture barrier structure",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 5,
+        "complexity": 1,
+        "thickness": [
+          70,
+          120
+        ],
+        "score": 69
+      },
+      {
+        "id": "bopp",
+        "name": "Heat-sealable BOPP Film",
+        "short": "Crispness-focused snack wrap",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 3,
+        "light": 1,
+        "grease": 4,
+        "seal": 4,
+        "cold": false,
+        "eco": 3,
+        "complexity": 1,
+        "thickness": [
+          30,
+          50
+        ],
+        "score": 67
+      },
+      {
+        "id": "hdpe",
+        "name": "HDPE Film",
+        "short": "Tough grain and dry-food pack",
+        "water": 4,
+        "oxygen": 2,
+        "gas": 1,
+        "strength": 4,
+        "light": 2,
+        "grease": 3,
+        "seal": 4,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          60,
+          120
+        ],
+        "score": 66
+      },
+      {
+        "id": "pet",
+        "name": "PET / PE Laminate",
+        "short": "Strong outer layer, sealable inner layer",
+        "water": 3,
+        "oxygen": 3,
+        "gas": 1,
+        "strength": 4,
+        "light": 1,
+        "grease": 4,
+        "seal": 5,
+        "cold": true,
+        "eco": 1,
+        "complexity": 2,
+        "thickness": [
+          60,
+          110
+        ],
+        "score": 62
+      },
+      {
+        "id": "ldpe",
+        "name": "LDPE Film",
+        "short": "Flexible moisture protection",
+        "water": 3,
+        "oxygen": 1,
+        "gas": 2,
+        "strength": 2,
+        "light": 1,
+        "grease": 2,
+        "seal": 5,
+        "cold": true,
+        "eco": 4,
+        "complexity": 1,
+        "thickness": [
+          50,
+          100
+        ],
+        "score": 45
+      }
+    ],
+    "targets": {
+      "water": 4,
+      "oxygen": 5,
+      "gas": 0,
+      "strength": 3,
+      "light": 5,
+      "grease": 5,
+      "seal": 4
+    },
+    "reasons": [
+      "Cooking oil at 99.9% fat needs oxygen and light protection to limit oxidation, plus a grease-resistant food-contact layer.",
+      "The 180-day shelf-life target at 25°C and 60% RH sets a very high moisture and very high oxygen barrier requirement. This is a design target, not a shelf-life prediction.",
+      "A well-formed seal and a suitable outer pack help protect the product during distribution."
+    ],
+    "notes": [],
+    "map": null,
+    "thickness": [
+      90,
+      140
+    ]
+  }
+}
