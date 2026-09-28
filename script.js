@@ -8,7 +8,7 @@ const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&
 const displayLevel = n => ['','Low','Moderate','High','Very high','Very high'][n];
 const transmission = n => ['','High','Medium','Low','Very low','Very low'][n];
 
-$('commodity-grid').innerHTML = Object.entries({...commodities,custom:customProfile}).map(([id,c])=>`<div class="commodity-option"><input type="radio" name="commodity" id="commodity-${id}" value="${id}"><label for="commodity-${id}"><span class="product-monogram ${c.color}" aria-hidden="true">${c.symbol}</span>${c.name}</label></div>`).join('');
+$('commodity-grid').innerHTML = Object.entries({...commodities,custom:customProfile}).map(([id,c])=>`<div class="commodity-option"><input type="radio" name="commodity" id="commodity-${id}" value="${id}"><label for="commodity-${id}">${c.name}</label></div>`).join('');
 
 function show(view) {
   $('home').hidden=view!=='home';$('workspace').hidden=view==='home';
