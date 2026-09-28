@@ -35,3 +35,15 @@ The public page was also opened interactively in the cloud browser. Tomato and C
 No application errors were captured in automated live browser testing. The interactive cloud browser emitted extension metadata errors from its own `chrome-extension://` scripts; these were not application failures.
 
 Mobile results are Chromium viewport tests, not physical iPhone/Safari tests. Product-specific engineering validation remains outside prototype scope.
+
+## Custom Food update — verified 29 September 2026
+
+Application commit: `3f319556616ec1f5083f48930be7753561a660b9`.
+
+- 14/14 engine tests pass, including original tests, exact baseline regression for all eight presets, peanuts, guava, validation and property sensitivity.
+- Browser QA run `36485673298` succeeded.
+- Deployment run `36485673343` succeeded, including the expanded browser suite against the live GitHub Pages URL.
+- Custom processed/fresh flows tested at 1440, 390 and 320 pixels; blank required fields, fresh respiration, processed N/A, back-navigation value retention and layout tested.
+- Roasted Peanuts returns a high-barrier laminate and no fresh MAP. Fresh Guava returns breathing film and validation-only MAP with no numeric gas targets.
+- Original commodity flows, printing and navigation still pass; zero captured application/runtime/network errors and no horizontal overflow.
+- Interactive public-site Fresh Guava flow and screenshot verified (`docs/custom-food-verified.jpg`).
