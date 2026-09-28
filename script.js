@@ -34,7 +34,7 @@ function fillStorage(){for(const key of ['days','temp','humidity','storage','tra
 function readNumber(key){return $(key).value.trim()===''?NaN:Number($(key).value);}
 function error(form,message){$(form+'-error').textContent=message;$(form+'-error').hidden=false;}
 function validInputs(form){const controls=[...$(form+'-form').querySelectorAll('input:not(:disabled),select:not(:disabled)')];const bad=controls.find(el=>!el.checkValidity());if(bad){bad.reportValidity();error(form,'Please check the highlighted field and enter a value within its range.');return false;}return true;}
-function readProduct(){if(!validInputs('product'))return false;const next={...state,moisture:readNumber('moisture'),fat:readNumber('fat'),ph:$('ph-na').checked?null:readNumber('ph'),respiration:state.fresh?Number($('respiration').value):0};try{PackWiseEngine.validate(next);state=next;$('product-error').hidden=true;return true;}catch(e){error('product',e.message);return false;}}
+function readProduct(){if(!validInputs('product'))return false;const product={moisture:readNumber('moisture'),fat:readNumber('fat'),ph:$('ph-na').checked?null:readNumber('ph'),respiration:state.fresh?Number($('respiration').value):0};try{PackWiseEngine.validate({...PackWiseEngine.defaults(state.commodity),...product});state={...state,...product};$('product-error').hidden=true;return true;}catch(e){error('product',e.message);return false;}}
 
 $('commodity-grid').addEventListener('change',e=>{if(e.target.name==='commodity'){state=PackWiseEngine.defaults(e.target.value);fillProduct();}});
 $('ph-na').addEventListener('change',updatePh);
