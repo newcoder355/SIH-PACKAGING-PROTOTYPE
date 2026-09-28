@@ -2,6 +2,10 @@
 
 **Intelligent Food Packaging Recommendation System** — a responsive, static decision-support prototype for a college/hackathon demonstration.
 
+**Live prototype:** https://newcoder355.github.io/SIH-PACKAGING-PROTOTYPE/
+
+Deployment and live desktop/mobile browser verification succeeded on 29 September 2026 (India). See `DEMO.md` for the 60–90 second presentation and suggested inputs.
+
 ## Problem
 
 Food products need different protection against moisture, oxygen, light and mechanical damage. Fresh produce also needs appropriate gas exchange. Inappropriate packaging can contribute to quality loss and waste; choosing a structure requires considering the product and its distribution conditions together.

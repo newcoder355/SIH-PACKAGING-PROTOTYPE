@@ -26,6 +26,12 @@ Chromium via Playwright 1.51.1, GitHub-hosted runner. Run: https://github.com/ne
 
 Product validation is isolated from a draft storage configuration so Back cannot trap the user after entering an inconsistent temperature. Storage helper text is reset between flows. Potato’s compostable alternative now explicitly requires an opaque ventilated outer pack.
 
-## Remaining verification
+## Live deployment verification — passed
 
-GitHub Pages administrative enablement is blocked by integration permissions. The configured deployment workflow tests the published URL after Pages is enabled. Live-site verification and cross-browser/device testing have not yet been completed; mobile results above are Chromium viewport tests, not physical iPhone/Safari tests.
+The owner enabled GitHub Pages. Deployment run `36475689673`, attempt 2, succeeded, including all nine engine tests and all 32 browser checks against https://newcoder355.github.io/SIH-PACKAGING-PROTOTYPE/ . Job ID: `109123346907`.
+
+The public page was also opened interactively in the cloud browser. Tomato and Chips flows, profile defaults, reset navigation and distinct recommendations were verified. The live Chips screenshot is saved at `docs/live-verified.jpg`.
+
+No application errors were captured in automated live browser testing. The interactive cloud browser emitted extension metadata errors from its own `chrome-extension://` scripts; these were not application failures.
+
+Mobile results are Chromium viewport tests, not physical iPhone/Safari tests. Product-specific engineering validation remains outside prototype scope.
