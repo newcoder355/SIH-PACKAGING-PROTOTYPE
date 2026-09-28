@@ -1,7 +1,9 @@
-# PackWise AI — implementation checkpoint
+# PackWise AI — resumable progress
 
-Authorized target: static HTML/CSS/JavaScript prototype in this repository, deployed through GitHub Pages.
+- Repository: `newcoder355/SIH-PACKAGING-PROTOTYPE`, branch `main`.
+- Full static application implemented: home, wizard, eight profiles, eleven materials, scoring, dynamic explanations, MAP references, alternatives, print, responsive layout.
+- Node engine tests added; browser QA and deployment verification are next.
+- GitHub Pages workflow is included. A repository-level Pages enablement step may require administrator access that the connector does not expose.
+- Resume by reading this file and `README.md`, then check the latest workflow run before changing deployment settings.
 
-Scope: home → commodity/properties → storage/distribution → rule-based analysis → explained recommendations; eight commodities; material scoring; fresh-produce MAP; sustainability alternative; print; responsive design.
-
-Status: repository access confirmed; implementation underway. No trained model, backend or authentication. Final source, test report and deployment status will be committed here so work can resume from GitHub.
+Deployment is **not yet verified** at this checkpoint. Do not describe a live site as complete until a public URL is opened and exercised.

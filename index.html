@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12634c"><meta name="description" content="PackWise AI helps explore food packaging materials through transparent, rule-based product and storage analysis.">
+  <title>PackWise AI — Intelligent Food Packaging</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%2312634c'/%3E%3Cpath d='M12 29V11h9a6 6 0 0 1 0 12h-9m0-6h9' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script><script src="engine.js" defer></script><script src="script.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="#home" aria-label="PackWise AI home"><span class="brand-mark" aria-hidden="true">P</span><span>PackWise <b>AI</b><small>Intelligent Food Packaging Recommendation System</small></span></a>
+  <span class="prototype-label">Interactive prototype</span>
+</div></header>
+<main id="main">
+<section id="home" class="view home" aria-labelledby="home-title">
+  <div class="hero-copy"><span class="eyebrow"><span class="tiny-line"></span> BETTER PACKAGING. LESS WASTE.</span>
+    <h1 id="home-title" tabindex="-1">The right protection.<br><em>For every product.</em></h1>
+    <p class="hero-description">Find the right packaging for your food product using intelligent analysis of food properties, storage conditions and shelf-life requirements.</p>
+    <button class="button primary" id="start">Get Packaging Recommendation <span aria-hidden="true">↗</span></button>
+    <p class="hero-caption">8 commodities · 11 material structures · Clear reasoning</p>
+    <div class="benefits"><div><span aria-hidden="true">↘</span><strong>Reduce food<br>wastage</strong></div><div><span aria-hidden="true">◷</span><strong>Improve<br>shelf life</strong></div><div><span aria-hidden="true">♧</span><strong>Choose sustainable<br>packaging</strong></div></div>
+  </div>
+  <div class="hero-panel" aria-label="Illustrative packaging decision preview">
+    <div class="panel-top"><span class="eyebrow">THE PACKWISE APPROACH</span><span class="demo-tag">Example</span></div>
+    <div class="sample-product"><span class="product-monogram tomato">To</span><div><h2>Fresh tomatoes</h2><p>Living produce. Different protection.</p></div></div>
+    <div class="flow-line"><span>Product properties</span><span>Storage conditions</span><span>Shelf-life target</span></div>
+    <div class="engine-label"><span aria-hidden="true">✳</span> Intelligent Recommendation Engine</div>
+    <div class="preview-recommendation"><span class="eyebrow">A MATERIAL WITH A REASON</span><h3>Micro-perforated<br>LDPE film</h3><p>Gas exchange for respiration.<br>Moisture retention for freshness.</p><div class="pill-row"><span>Breathable</span><span>Heat sealable</span></div></div>
+    <div class="panel-bottom"><span>Every recommendation, explained.</span><span aria-hidden="true">↗</span></div>
+  </div>
+</section>
+<section id="workspace" class="view workspace" hidden>
+  <ol class="progress" aria-label="Recommendation progress"><li id="progress-product"><span>1</span> Product</li><li id="progress-storage"><span>2</span> Storage</li><li id="progress-result"><span>3</span> Recommendation</li></ol>
+  <section id="product-step" aria-labelledby="product-title">
+    <div class="section-heading"><span class="eyebrow">01 / KNOW YOUR PRODUCT</span><h1 id="product-title" tabindex="-1">What are you packaging?</h1><p>Choose a product. Start with a demo profile, then fine-tune its properties.</p></div>
+    <form id="product-form" novalidate>
+      <fieldset class="commodity-fieldset"><legend class="label">Select commodity</legend><div id="commodity-grid" class="commodity-grid"></div></fieldset>
+      <div class="form-layout"><div class="card properties-card"><div class="card-heading"><h2>Food properties</h2><span class="muted-badge">Editable demo values</span></div>
+        <div class="input-grid">
+          <label>Moisture content <span class="unit-label">% by mass</span><input type="number" name="moisture" id="moisture" min="0" max="100" step="0.1" required><small>Water present in the product, not water activity.</small></label>
+          <label>Oil / fat content <span class="unit-label">% by mass</span><input type="number" name="fat" id="fat" min="0" max="100" step="0.1" required><small>Higher fat can increase oxidation sensitivity.</small></label>
+          <div><label for="ph">pH <span class="unit-label">0–14</span></label><input type="number" name="ph" id="ph" min="0" max="14" step="0.1"><label class="check-label"><input type="checkbox" id="ph-na"> Not applicable / not measured</label></div>
+          <label>Respiration level<select id="respiration" name="respiration"><option value="0">Not applicable</option><option value="1">Low</option><option value="2">Medium</option><option value="3">High</option></select><small id="respiration-hint">Relative demo category, not a measured rate.</small></label>
+        </div>
+      </div><aside class="context-card"><span class="eyebrow">PRODUCT INSIGHT</span><h3 id="product-insight-title"></h3><p id="product-insight"></p><div class="aside-divider"></div><p>Defaults are illustrative starting points. Actual composition varies by variety, processing and formulation.</p></aside></div>
+      <p id="product-error" class="error" role="alert" hidden></p>
+      <div class="form-actions"><button type="button" class="button ghost" id="back-home">← Home</button><button class="button primary" type="submit">Continue to Storage <span aria-hidden="true">→</span></button></div>
+    </form>
+  </section>
+  <section id="storage-step" hidden aria-labelledby="storage-title">
+    <div class="section-heading"><span class="eyebrow">02 / PLAN THE JOURNEY</span><h1 id="storage-title" tabindex="-1">Where does your product go?</h1><p>Tell us how long it should last and the conditions it will experience.</p></div>
+    <form id="storage-form" novalidate><div class="form-layout"><div class="card properties-card"><div class="card-heading"><h2>Storage & distribution</h2><span id="storage-product" class="muted-badge"></span></div>
+      <div class="input-grid">
+        <label>Desired shelf life <span class="unit-label">days</span><input id="days" type="number" min="1" max="730" step="1" required><small>A target to evaluate, not a guaranteed outcome.</small></label>
+        <label>Storage type<select id="storage"><option value="ambient">Ambient</option><option value="chilled">Chilled</option><option value="frozen">Frozen</option></select><small id="storage-hint">Choose the intended temperature regime.</small></label>
+        <label>Storage temperature <span class="unit-label">°C</span><input id="temp" type="number" min="-30" max="50" step="0.1" required></label>
+        <label>Relative humidity <span class="unit-label">% RH</span><input id="humidity" type="number" min="0" max="100" step="1" required></label>
+        <label class="span-two">Transportation conditions<select id="transport"><option value="local">Short / local</option><option value="medium">Medium distance</option><option value="long">Long distance</option><option value="rough">Rough handling / high mechanical stress</option></select></label>
+      </div></div><aside class="context-card"><span class="eyebrow">THE BIGGER PICTURE</span><h3>More than a material.</h3><p>Humidity affects moisture protection. Temperature changes respiration. Transport affects strength.</p><div class="aside-divider"></div><p>We compare these needs together to find a suitable packaging structure.</p></aside></div>
+      <p id="storage-error" class="error" role="alert" hidden></p><div class="form-actions"><button type="button" class="button ghost" id="back-product">← Product details</button><button type="submit" class="button primary">Generate Recommendation <span aria-hidden="true">✳</span></button></div>
+    </form>
+  </section>
+  <section id="analysis-step" hidden aria-labelledby="analysis-title"><div class="analysis-orbit" aria-hidden="true">✳</div><span class="eyebrow">INTELLIGENT RECOMMENDATION ENGINE</span><h1 id="analysis-title" tabindex="-1">Finding the right fit.</h1><p id="analysis-status" role="status" aria-live="polite">Analyzing moisture sensitivity…</p><div class="analysis-track"><span></span></div><small>Comparing 11 material structures using transparent rules</small></section>
+  <section id="result-step" hidden aria-labelledby="result-title"><div id="result-content"></div><div class="form-actions result-actions"><button class="button ghost" id="edit-inputs">← Adjust inputs</button><div><button class="button secondary" id="print-result">Print / Save Result</button><button class="button primary" id="new-result">Start New Recommendation</button></div></div><p class="disclaimer">Prototype recommendations are intended to demonstrate the decision-support concept. Final industrial packaging specifications should be validated through product testing, regulatory requirements and packaging trials.</p></section>
+</section>
+</main>
+<footer class="site-footer"><span>PackWise AI <span class="footer-separator">/</span> Thoughtful packaging starts here.</span><span>Rule-based prototype · No trained ML model</span></footer>
+<noscript><p class="error">Please enable JavaScript to use the recommendation engine.</p></noscript>
+</body></html>
