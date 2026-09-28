@@ -93,6 +93,10 @@ Open `index.html` directly in a modern browser, or run `python3 -m http.server 8
 
 GitHub Actions runs engine tests and assembles only the six static runtime files into a Pages artifact. If Pages is not enabled, a repository administrator must select **Settings → Pages → Source: GitHub Actions** once. Workflow configuration alone cannot override GitHub’s administrative permissions. See `PROGRESS.md` for the verified deployment status.
 
+## Verification
+
+Nine engine tests pass locally and in GitHub Actions. Automated Chromium QA completed all eight commodity flows, Tomato and Chips at widths 1440, 390 and 320 pixels, input-change sensitivity, back/reset navigation, invalid composition/temperature recovery, frozen mode, comparison expansion and print/PDF rendering. No JavaScript console/runtime/network errors or horizontal overflow were detected. See `TEST_REPORT.md` and the Browser QA workflow artifact for screenshots. The Pages workflow also runs these browser checks against its actual deployment URL after publication.
+
 ## Limitations
 
 - No measured or trained model; no engineering optimization or live supplier database.

@@ -30,7 +30,7 @@ function fillProduct() {
   $('product-insight').textContent=state.note;
   $('product-error').hidden=true;
 }
-function fillStorage(){for(const key of ['days','temp','humidity','storage','transport'])$(key).value=state[key];$('storage-product').textContent=state.name;$('storage-error').hidden=true;}
+function fillStorage(){for(const key of ['days','temp','humidity','storage','transport'])$(key).value=state[key];$('storage-product').textContent=state.name;$('storage-error').hidden=true;$('storage-hint').textContent='Choose the intended temperature regime.';}
 function readNumber(key){return $(key).value.trim()===''?NaN:Number($(key).value);}
 function error(form,message){$(form+'-error').textContent=message;$(form+'-error').hidden=false;}
 function validInputs(form){const controls=[...$(form+'-form').querySelectorAll('input:not(:disabled),select:not(:disabled)')];const bad=controls.find(el=>!el.checkValidity());if(bad){bad.reportValidity();error(form,'Please check the highlighted field and enter a value within its range.');return false;}return true;}
@@ -68,7 +68,7 @@ function renderResult(r){
     ['Mechanical strength',displayLevel(t.strength),'Primary film needs secondary packaging when transport demands exceed its capacity.'],
     ['MAP suitability',r.map?r.map.suitability:(r.frozen?'Not assessed in frozen mode':'Not the primary requirement'),'Modified Atmosphere Packaging changes headspace gas. Product-specific validation is required.']
   ];
-  const ecoText=r.fresh?'Consider a food-contact, certified compostable breathable grade where suitable composting collection exists. Moisture control, sealing and strength may be lower; validate ventilation and pack life.':eco.id===best.id?'The leading option is also the strongest recycling-oriented candidate in this demo. Collection, labels, closures and local film-recycling infrastructure determine actual recyclability.':'A PE-based structure can simplify material recovery where film recycling exists. Oxygen and light protection may be lower than a laminate; the same shelf life is not established.';
+  const ecoText=r.fresh?'Consider a food-contact, certified compostable breathable grade where suitable composting collection exists. Moisture control, sealing and strength may be lower; validate ventilation and pack life.'+(p.commodity==='potato'?' Add an opaque, ventilated outer pack to maintain darkness.':''):eco.id===best.id?'The leading option is also the strongest recycling-oriented candidate in this demo. Collection, labels, closures and local film-recycling infrastructure determine actual recyclability.':'A PE-based structure can simplify material recovery where film recycling exists. Oxygen and light protection may be lower than a laminate; the same shelf life is not established.';
   const ecoName=r.fresh?'Compostable Breathable Film':eco.name;
   const phText=p.ph===null?'pH: N/A':'pH '+p.ph;
   $('result-content').innerHTML=`
