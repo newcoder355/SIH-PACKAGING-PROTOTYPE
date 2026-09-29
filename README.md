@@ -1,4 +1,4 @@
-# PackWise AI
+# SmartPack
 
 **Intelligent Food Packaging Recommendation System** — a responsive, static decision-support prototype for a college/hackathon demonstration.
 
@@ -12,7 +12,7 @@ Food products need different protection against moisture, oxygen, light and mech
 
 ## Prototype overview
 
-PackWise AI demonstrates the workflow from commodity selection to an explained material recommendation. **It currently uses deterministic rule-based scoring and illustrative data, not a trained AI/ML model.** “AI” is project branding for the intended full system. No trained model, backend, database, authentication, payment or traceability service is present.
+SmartPack demonstrates the workflow from commodity selection to an explained material recommendation. **It currently uses deterministic rule-based scoring and illustrative data, not a trained AI/ML model.** No trained model, backend, database, authentication, payment or traceability service is present.
 
 ### Features
 

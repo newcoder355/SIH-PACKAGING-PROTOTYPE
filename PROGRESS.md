@@ -1,4 +1,4 @@
-# PackWise AI — resumable progress
+# SmartPack — resumable progress
 
 ## Completed
 

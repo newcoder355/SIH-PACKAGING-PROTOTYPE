@@ -1,4 +1,4 @@
-# PackWise AI test report
+# SmartPack test report
 
 Date: 28 September 2026 UTC / 29 September 2026 India.
 

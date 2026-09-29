@@ -1,10 +1,10 @@
-# PackWise AI — judge demonstration
+# SmartPack — judge demonstration
 
 ## 60–90 second script
 
 “Different foods fail for different reasons. Tomatoes continue to respire after harvest, while chips lose crispness when they absorb moisture. One packaging material cannot serve every product equally well.
 
-PackWise AI brings the product and its journey into one recommendation flow. We select a commodity, review editable food properties, then enter the shelf-life target, temperature, humidity and transport conditions.
+SmartPack brings the product and its journey into one recommendation flow. We select a commodity, review editable food properties, then enter the shelf-life target, temperature, humidity and transport conditions.
 
 For these tomatoes, the prototype selects micro-perforated LDPE because the package must allow gas exchange while limiting moisture loss. It explains the choice, shows target packaging requirements, and presents qualified atmosphere references for future validation.
 

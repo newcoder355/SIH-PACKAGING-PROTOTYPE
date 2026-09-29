@@ -27,6 +27,6 @@
   // Custom mode has no assumed food composition; storage remains editable in step 2.
   const customProfile = {name:'Custom Food', symbol:'+', color:'rice', fresh:false, customName:'', productType:'', moisture:null, fat:null, ph:null, respiration:0, days:30, temp:25, humidity:60, storage:'ambient', transport:'local', note:'Enter the properties of your food. Recommendations use generic property-driven rules, not a validated commodity profile.'};
   const data = {commodities, materials, customProfile};
-  root.PackWiseData = data;
+  root.SmartPackData = data;
   if (typeof module !== 'undefined') module.exports = data;
 })(typeof window !== 'undefined' ? window : globalThis);

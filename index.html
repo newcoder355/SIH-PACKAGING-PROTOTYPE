@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#12634c"><meta name="description" content="PackWise AI helps explore food packaging materials through transparent, rule-based product and storage analysis.">
-  <title>PackWise AI — Intelligent Food Packaging</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%2312634c'/%3E%3Cpath d='M12 29V11h9a6 6 0 0 1 0 12h-9m0-6h9' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#364258"><meta name="description" content="SmartPack helps explore food packaging materials through transparent, rule-based product and storage analysis.">
+  <title>SmartPack — Intelligent Food Packaging</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23364258'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-family='Arial,sans-serif' font-size='28' fill='white'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="data.js" defer></script><script src="engine.js" defer></script><script src="script.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
 <header class="site-header"><div class="header-inner">
-  <a class="brand" href="#home" aria-label="PackWise AI home"><span class="brand-mark" aria-hidden="true">P</span><span>PackWise <b>AI</b><small>Intelligent Food Packaging Recommendation System</small></span></a>
+  <a class="brand" href="#home" aria-label="SmartPack home"><span class="brand-mark" aria-hidden="true">S</span><span>SmartPack<small>Intelligent Food Packaging Recommendation System</small></span></a>
   <span class="prototype-label">Interactive prototype</span>
 </div></header>
 <main id="main">
@@ -23,14 +23,17 @@
     <p class="hero-caption">8 demo foods + Custom Food · 11 material structures · Clear reasoning</p>
     <div class="benefits"><div><span aria-hidden="true">↘</span><strong>Reduce food<br>wastage</strong></div><div><span aria-hidden="true">◷</span><strong>Improve<br>shelf life</strong></div><div><span aria-hidden="true">♧</span><strong>Choose sustainable<br>packaging</strong></div></div>
   </div>
-  <div class="hero-panel" aria-label="Illustrative packaging decision preview">
-    <div class="panel-top"><span class="eyebrow">THE PACKWISE APPROACH</span><span class="demo-tag">Example</span></div>
-    <div class="sample-product"><span class="product-monogram tomato">To</span><div><h2>Fresh tomatoes</h2><p>Living produce. Different protection.</p></div></div>
-    <div class="flow-line"><span>Product properties</span><span>Storage conditions</span><span>Shelf-life target</span></div>
-    <div class="engine-label"><span aria-hidden="true">✳</span> Intelligent Recommendation Engine</div>
-    <div class="preview-recommendation"><span class="eyebrow">A MATERIAL WITH A REASON</span><h3>Micro-perforated<br>LDPE film</h3><p>Gas exchange for respiration.<br>Moisture retention for freshness.</p><div class="pill-row"><span>Breathable</span><span>Heat sealable</span></div></div>
-    <div class="panel-bottom"><span>Every recommendation, explained.</span><span aria-hidden="true">↗</span></div>
-  </div>
+  <aside class="hero-panel workflow-panel" aria-labelledby="workflow-title">
+    <span class="eyebrow">HOW SMARTPACK WORKS</span>
+    <h2 id="workflow-title">Your product. A clear recommendation.</h2>
+    <ol class="workflow">
+      <li><span class="workflow-number" aria-hidden="true">01</span><div><h3>Enter your inputs</h3><p>Food properties, storage and shelf-life target.</p></div></li>
+      <li><span class="workflow-number" aria-hidden="true">02</span><div><h3>Check packaging needs</h3><p>Moisture, oxygen, gas exchange and strength.</p></div></li>
+      <li><span class="workflow-number" aria-hidden="true">03</span><div><h3>Compare materials</h3><p>Match your needs against 11 material structures.</p></div></li>
+      <li><span class="workflow-number" aria-hidden="true">04</span><div><h3>Get your recommendation</h3><p>Material, specifications and alternatives—with reasons.</p></div></li>
+    </ol>
+    <p class="workflow-note">Transparent, rule-based analysis. No trained ML model.</p>
+  </aside>
 </section>
 <section id="workspace" class="view workspace" hidden>
   <ol class="progress" aria-label="Recommendation progress"><li id="progress-product"><span>1</span> Product</li><li id="progress-storage"><span>2</span> Storage</li><li id="progress-result"><span>3</span> Recommendation</li></ol>
@@ -71,6 +74,6 @@
   <section id="result-step" hidden aria-labelledby="result-title"><div id="result-content"></div><div class="form-actions result-actions"><button class="button ghost" id="edit-inputs">← Adjust inputs</button><div><button class="button secondary" id="print-result">Print / Save Result</button><button class="button primary" id="new-result">Start New Recommendation</button></div></div><p class="disclaimer">Prototype recommendations are intended to demonstrate the decision-support concept. Final industrial packaging specifications should be validated through product testing, regulatory requirements and packaging trials.</p></section>
 </section>
 </main>
-<footer class="site-footer"><span>PackWise AI <span class="footer-separator">/</span> Thoughtful packaging starts here.</span><span>Rule-based prototype · No trained ML model</span></footer>
+<footer class="site-footer"><span>SmartPack <span class="footer-separator">/</span> Thoughtful packaging starts here.</span><span>Rule-based prototype · No trained ML model</span></footer>
 <noscript><p class="error">Please enable JavaScript to use the recommendation engine.</p></noscript>
 </body></html>

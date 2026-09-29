@@ -1,5 +1,5 @@
 (function (root) {
-  const data = root.PackWiseData || require('./data.js');
+  const data = root.SmartPackData || require('./data.js');
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
   const levels = ['', 'Low', 'Moderate', 'High', 'Very high', 'Very high'];
   function defaults(id) {return {commodity:id, ...(id==='custom'?data.customProfile:data.commodities[id])};}
@@ -84,6 +84,6 @@
     return {input:{...p},commodity:c,best,alternative,eco,ranked,targets,weights,reasons:reasons.slice(0,4),notes,fresh,frozen,thickness,
       map: fresh?(p.commodity==='custom'?{suitability:'Requires product-specific validation',custom:true,note:'MAP may be suitable, but gas composition must be determined experimentally using commodity respiration rate, package size, film area, permeability and storage temperature.'}:p.commodity==='potato'?{suitability:'Not a primary requirement',o2:'Ambient air (~21%)',co2:'Ambient air (~0.04%)',note:'Prefer ventilation and darkness. These are ambient-air references, not a low-oxygen MAP recipe.'}:p.commodity==='tomato'?{suitability:'Candidate for validated trials',o2:'3–5%',co2:'0–3%',note:'Illustrative controlled-atmosphere references for mature-green tomatoes. Passive MAP must be engineered for pack size, maturity, temperature and respiration.'}:{suitability:'Cultivar-specific trials',o2:'1–2%',co2:'2–4%',note:'Red Delicious controlled-atmosphere references only; do not generalize to other apple cultivars or directly use as a gas-flush recipe.'}):null};
   }
-  const api={defaults,validate,recommend};root.PackWiseEngine=api;
+  const api={defaults,validate,recommend};root.SmartPackEngine=api;
   if(typeof module!=='undefined') module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

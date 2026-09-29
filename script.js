@@ -1,7 +1,7 @@
 'use strict';
 const $ = id => document.getElementById(id);
-const {commodities, materials, customProfile} = PackWiseData;
-let state = PackWiseEngine.defaults('tomato');
+const {commodities, materials, customProfile} = SmartPackData;
+let state = SmartPackEngine.defaults('tomato');
 let lastResult = null;
 let analyzing = false;
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -38,9 +38,9 @@ function fillStorage(){for(const key of ['days','temp','humidity','storage','tra
 function readNumber(key){return $(key).value.trim()===''?NaN:Number($(key).value);}
 function error(form,message){$(form+'-error').textContent=message;$(form+'-error').hidden=false;}
 function validInputs(form){const controls=[...$(form+'-form').querySelectorAll('input:not(:disabled),select:not(:disabled)')];const bad=controls.find(el=>!el.checkValidity());if(bad){bad.reportValidity();error(form,'Please check the highlighted field and enter a value within its range.');return false;}return true;}
-function readProduct(){if(!validInputs('product'))return false;const product={...(state.commodity==='custom'?{customName:$('custom-name').value.trim(),productType:$('custom-type').value}:{}),moisture:readNumber('moisture'),fat:readNumber('fat'),ph:$('ph-na').checked?null:readNumber('ph'),respiration:state.fresh?Number($('respiration').value):0};try{PackWiseEngine.validate({...PackWiseEngine.defaults(state.commodity),...product});state={...state,...product};if(state.commodity==='custom')state.name=product.customName;$('product-error').hidden=true;return true;}catch(e){error('product',e.message);return false;}}
+function readProduct(){if(!validInputs('product'))return false;const product={...(state.commodity==='custom'?{customName:$('custom-name').value.trim(),productType:$('custom-type').value}:{}),moisture:readNumber('moisture'),fat:readNumber('fat'),ph:$('ph-na').checked?null:readNumber('ph'),respiration:state.fresh?Number($('respiration').value):0};try{SmartPackEngine.validate({...SmartPackEngine.defaults(state.commodity),...product});state={...state,...product};if(state.commodity==='custom')state.name=product.customName;$('product-error').hidden=true;return true;}catch(e){error('product',e.message);return false;}}
 
-$('commodity-grid').addEventListener('change',e=>{if(e.target.name==='commodity'){state=PackWiseEngine.defaults(e.target.value);fillProduct();}});
+$('commodity-grid').addEventListener('change',e=>{if(e.target.name==='commodity'){state=SmartPackEngine.defaults(e.target.value);fillProduct();}});
 $('custom-type').addEventListener('change',()=>{
   state.productType=$('custom-type').value;state.fresh=state.productType==='fresh';
   $('respiration').disabled=!state.fresh;
@@ -58,14 +58,14 @@ $('storage').addEventListener('change',()=>{const type=$('storage').value;$('tem
 $('storage-form').addEventListener('submit',async e=>{
   e.preventDefault();if(analyzing||!validInputs('storage'))return;
   const next={...state,days:readNumber('days'),temp:readNumber('temp'),humidity:readNumber('humidity'),storage:$('storage').value,transport:$('transport').value};
-  try {lastResult=PackWiseEngine.recommend(next);state=next;}catch(err){error('storage',err.message);return;}
+  try {lastResult=SmartPackEngine.recommend(next);state=next;}catch(err){error('storage',err.message);return;}
   analyzing=true;show('analysis');
   const messages=['Analyzing moisture sensitivity…','Evaluating oxygen barrier requirements…','Checking storage conditions…','Comparing packaging structures…','Finding sustainable alternatives…'];
   for(const message of messages){$('analysis-status').textContent=message;await new Promise(resolve=>setTimeout(resolve,320));}
   renderResult(lastResult);analyzing=false;show('result');
 });
 $('edit-inputs').addEventListener('click',()=>{fillStorage();show('storage');});
-$('new-result').addEventListener('click',()=>{state=PackWiseEngine.defaults('tomato');lastResult=null;fillProduct();fillStorage();show('product');});
+$('new-result').addEventListener('click',()=>{state=SmartPackEngine.defaults('tomato');lastResult=null;fillProduct();fillStorage();show('product');});
 $('print-result').addEventListener('click',()=>window.print());
 
 function renderResult(r){
@@ -83,7 +83,7 @@ function renderResult(r){
   const ecoName=r.fresh?'Compostable Breathable Film':eco.name;
   const phText=p.ph===null?'pH: N/A':'pH '+p.ph;
   $('result-content').innerHTML=`
-    <div class="result-heading"><div><span class="eyebrow">03 / YOUR PACKAGING DECISION</span><h1 id="result-title" tabindex="-1">Recommended Packaging${p.commodity==='custom'?' — '+esc(r.commodity.name):''}</h1><p>A material choice, the reasoning behind it, and what to validate next.</p></div><span class="result-reference">PACKWISE / MATERIAL EXPLORER</span></div>
+    <div class="result-heading"><div><span class="eyebrow">03 / YOUR PACKAGING DECISION</span><h1 id="result-title" tabindex="-1">Recommended Packaging${p.commodity==='custom'?' — '+esc(r.commodity.name):''}</h1><p>A material choice, the reasoning behind it, and what to validate next.</p></div><span class="result-reference">SMARTPACK / MATERIAL EXPLORER</span></div>
     <div class="recommendation-hero"><div><span class="eyebrow">TOP-RANKED STRUCTURE · ${esc(r.commodity.name.toUpperCase())}</span><h2>${esc(best.name)}</h2><p>${esc(best.short)}</p></div><div class="score-box"><strong>${best.score}<span>/100</span></strong><span>Suitability Score</span><small>Rule-based fit · not ML confidence</small></div></div>
     <div class="result-summary"><span>${esc(r.commodity.name)}</span><span>${p.days}-day target</span><span>${esc(p.storage)} · ${p.temp}°C</span><span>${p.humidity}% RH</span><span>${esc({local:'Local transport',medium:'Medium distance',long:'Long distance',rough:'Rough handling'}[p.transport])}</span><span>Moisture ${p.moisture}% · fat ${p.fat}%</span><span>${phText}</span>${r.commodity.fresh?`<span>${['','Low','Medium','High'][p.respiration]} respiration</span>`:''}</div>
     <div class="results-grid"><article class="card why-card"><h2>Why this was recommended</h2><ol class="reason-list">${r.reasons.map(x=>`<li>${esc(x)}</li>`).join('')}</ol></article>

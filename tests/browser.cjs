@@ -23,8 +23,8 @@ const server=http.createServer((req,res)=>{
     page.on('pageerror',err=>errors.push(err.message));page.on('console',msg=>{if(msg.type()==='error')errors.push(msg.text());});
     page.on('response',res=>{if(res.status()>=400)errors.push(res.status()+' '+res.url());});
     await page.goto(base,{waitUntil:'networkidle'});
-    assert.equal(await page.title(),'PackWise AI — Intelligent Food Packaging');
-    assert.equal(await page.locator('#start').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(18, 99, 76)');
+    assert.equal(await page.title(),'SmartPack — Intelligent Food Packaging');
+    assert.equal(await page.locator('#start').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(54, 66, 88)');
     await overflow(page,width+' home');await page.screenshot({path:path.join(root,'test-output',width+'-home.png'),fullPage:true});
     await page.getByRole('button',{name:'Get Packaging Recommendation'}).click();
     assert.equal(await page.locator('#moisture').inputValue(),'94');await overflow(page,width+' product');

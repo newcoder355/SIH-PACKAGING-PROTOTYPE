@@ -1,4 +1,4 @@
-name: Test and deploy PackWise AI
+name: Test and deploy SmartPack
 on:
   push:
     branches: [main]
