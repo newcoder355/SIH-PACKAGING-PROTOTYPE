@@ -20,5 +20,5 @@
 .workflow h3{font-size:.96rem;margin:1px 0 5px;letter-spacing:-.015em}
 .workflow p{font-size:.8rem;line-height:1.6;margin:0;max-width:300px}
 .workflow-note{font-size:.71rem;margin:24px 0 0;padding-top:17px;border-top:1px solid var(--line)}
-@media(max-width:650px){.hero-copy h1{font-weight:700}.workflow-panel h2{font-size:1.35rem}.commodity-option label{min-height:56px;justify-content:center}.commodity-option:has(#commodity-custom) label{min-height:44px}}
+@media(max-width:650px){.hero-copy h1{font-weight:700;font-size:clamp(1.65rem,8.5vw,2.2rem)}.workflow-panel h2{font-size:1.35rem}.commodity-option label{min-height:56px;justify-content:center}.commodity-option:has(#commodity-custom) label{min-height:44px}}
 @media print{.recommendation-hero{color:var(--ink);background:#eef0f4;border-color:#c4cbd5}.recommendation-hero p,.recommendation-hero .eyebrow,.score-box>span,.score-box small,.score-box strong span{color:#45536c}.score-box{border-color:#c4cbd5}}
